@@ -1,0 +1,98 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/brp_welcome_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="SAN ANDREAS ROLEPLAY CITY"
+        android:textAllCaps="true"
+        android:textColor="#ffff"
+        android:textSize="@dimen/_22sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.221" />
+
+    <TextView
+        android:id="@+id/brp_welcome_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:text="Chào mừng bạn đã đến với máy chủ SA-RP City"
+        android:textAllCaps="false"
+        android:textColor="#ffff"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/brp_welcome_title"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@+id/brp_welcome_title"
+        app:layout_constraintTop_toBottomOf="@+id/brp_welcome_title"
+        app:layout_constraintVertical_bias="0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/constraintLayout"
+        android:layout_width="@dimen/_230sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/hud_logo_bg"
+        app:layout_constraintEnd_toEndOf="@+id/brp_welcome_desc"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/brp_welcome_desc"
+        app:layout_constraintTop_toBottomOf="@+id/brp_welcome_desc">
+
+        <TextView
+            android:id="@id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:text="Tên"
+            android:textAllCaps="true"
+            android:textColor="#FBFBFD"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextTextNickName"
+            android:layout_width="@dimen/_170sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="@null"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_@.][_-=)($"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:hint="Điền tên của bạn"
+            android:imeOptions="actionDone|flagForceAscii"
+            android:inputType="text"
+            android:maxLength="20"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="#ffffffff"
+            android:textColorHint="#ff6a7ba7"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/textView5"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/brp_welcome_btn"
+        android:layout_width="@dimen/_139sdp"
+        android:layout_height="@dimen/_36sdp"
+        android:background="@drawable/hud_logo_bg"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Bắt đầu trò chơi"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/brp_welcome_desc"
+        app:layout_constraintTop_toBottomOf="@+id/brp_welcome_desc" />
+</androidx.constraintlayout.widget.ConstraintLayout>

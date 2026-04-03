@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.samp.online.app-mergeDebugResources-4:/values-w600dp-land-v13/values-w600dp-land-v13.xml",
+            "map": [
+                {
+                    "source": "E:\\download\\Telegram Desktop\\2.2-2.1GTASA 64x\\caches\\transforms-4\\480589f346957b031e14ac5ac2deef9a\\transformed\\material-1.10.0\\res\\values-w600dp-land-v13\\values-w600dp-land-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "54",
+                        "endOffsets": "105"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_twitter"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="0.5">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/hud_job_layout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/hud_job_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+            <ImageView
+                android:id="@+id/iphone2"
+                android:layout_width="@dimen/_280sdp"
+                android:layout_height="@dimen/_260sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/iphone2"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/twitter_list"
+                android:layout_width="@dimen/_110sdp"
+                android:layout_height="@dimen/_205sdp"
+                android:layout_marginTop="@dimen/_33sdp"
+                android:fadeScrollbars="true"
+                android:scrollbars="none"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                android:scrollbarThumbVertical="@drawable/players_list_scroll_thumb"
+                android:scrollbarTrackVertical="@drawable/players_list_scroll_track"
+                app:layout_constraintEnd_toEndOf="@+id/iphone2"
+                app:layout_constraintStart_toStartOf="@+id/iphone2"
+                app:layout_constraintTop_toTopOf="@+id/iphone2" />
+
+            <ImageView
+                android:id="@+id/show_twitter_post"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginEnd="120dp"
+                android:layout_marginBottom="28dp"
+                android:alpha="0.95"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/iphone2"
+                app:layout_constraintEnd_toEndOf="@+id/iphone2"
+                app:srcCompat="@drawable/icon_twitter_add" />
+            
+            <LinearLayout
+                android:id="@+id/back_twitter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iphone2">
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/ic_back" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Twitter"
+                    android:textSize="9dp"
+                    android:textColor="#000000"/>
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/twitter_post"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="#96000000"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:background="@drawable/bg_post_tw"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="โพสทวิตเตอร์"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/twitter_inputmsg"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:singleLine="true"
+                android:inputType="text"
+                android:imeOptions="actionDone"
+                android:hint="ข้อความ"
+                android:textColorHint="#64ffffff"
+                android:textColor="#ffffff"
+                android:textSize="15dp" />
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="40dp">
+                <EditText
+                    android:id="@+id/twitter_inputurl"
+                    android:layout_width="235dp"
+                    android:layout_height="40dp"
+                    android:singleLine="true"
+                    android:inputType="text"
+                    android:imeOptions="actionDone"
+                    android:hint="Url รูปภาพ"
+                    android:textColorHint="#64ffffff"
+                    android:textColor="#ffffff"
+                    android:textSize="15dp" />
+
+                <Button
+                    android:id="@+id/twitter_upload"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="55dp"
+                    android:layout_gravity="end"
+                    android:background="#b30081ff"
+                    android:textColor="#ffffff"
+                    android:text="อัพโหลด"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/twitter_send"
+                android:layout_width="300dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="55dp"
+                android:layout_gravity="end"
+                android:background="#b30081ff"
+                android:textColor="#ffffff"
+                android:text="โพสต์"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/largeImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:padding="60dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

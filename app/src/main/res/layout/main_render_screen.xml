@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_gravity="bottom" android:id="@id/main_fl_root" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <SurfaceView android:id="@id/main_sv" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <FrameLayout
+        android:id="@+id/ui_layout"
+        android:visibility="visible"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <include
+            layout="@layout/bhud_layout"
+            android:visibility="visible" />
+
+        <include
+            layout="@layout/sd_dialog"
+            android:visibility="visible" />
+        <include layout="@layout/speedometer" />
+        <include layout="@layout/activity_twitter2" />
+        <include layout="@layout/activity_phone" />
+        <LinearLayout
+            android:id="@id/main_input"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#a2ffffff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="15.0dip"
+            android:paddingRight="15.0dip">
+
+            <com.nvidia.devtech.CustomEditText
+                android:id="@id/main_et_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15.0dip"
+                android:layout_weight="0.7"
+                android:ems="10"
+                android:imeOptions="actionDone|flagNoExtractUi|flagNoFullscreen"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textSize="14.0sp" />
+
+            <Button
+                android:id="@id/main_but_input_prev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:gravity="center"
+                android:minWidth="11.0dip"
+                android:minHeight="11.0dip"
+                android:text="⋁"
+                android:textSize="14.0sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@id/main_but_input_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:gravity="center"
+                android:minWidth="11.0dip"
+                android:minHeight="11.0dip"
+                android:text="⋀"
+                android:textSize="14.0sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@id/main_but_input_slash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:gravity="center"
+                android:minWidth="11.0dip"
+                android:minHeight="11.0dip"
+                android:text="/"
+                android:textSize="14.0sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <include
+            layout="@layout/donate_reytiz"/>
+        <include
+            layout="@layout/donat_sc" />
+        <include
+            layout="@layout/donate_podt" />
+
+        <include
+            layout="@layout/hassle_tab"
+            android:visibility="visible" />
+
+        <include
+            layout="@layout/brp_welcome"
+            android:visibility="invisible" />
+
+    </FrameLayout>
+</FrameLayout>

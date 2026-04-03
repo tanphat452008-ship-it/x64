@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="@dimen/_250sdp" android:layout_height="@dimen/_200sdp" android:layout_marginBottom="@dimen/_20sdp" app:cardBackgroundColor="#ff101a34" app:cardCornerRadius="@dimen/_8sdp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/ivNewsImage" android:layout_width="fill_parent" android:layout_height="@dimen/_120sdp" android:src="@drawable/test_bg_news" android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@id/tvNewsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="@dimen/_130sdp"
+        android:fontFamily="@font/sqaure_studio"
+        android:text="Tester"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13sdp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@id/button"
+        android:layout_width="@dimen/_170sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_70sdp"
+        android:background="@drawable/btn"
+        android:fontFamily="@font/sqaure_studio"
+        android:text="continue"
+        android:textAllCaps="true"
+        android:textColor="#ffffffff"
+        android:textSize="@dimen/_15sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView3" />
+</androidx.cardview.widget.CardView>

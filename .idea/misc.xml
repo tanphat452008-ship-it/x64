@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/$ic_chat_bg_active__0.xml" value="0.165234375" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/background_dialog_full.xml" value="0.17037037037037037" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/background_launcher_button.xml" value="0.117" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/btn_welcome_play.xml" value="0.13" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/custom_thumb.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/dialog_background.xml" value="0.17037037037037037" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/dialog_bg.xml" value="0.1085" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/dialog_item_btn.xml" value="0.17037037037037037" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/dialog_second_btn_bg.xml" value="0.17037037037037037" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/ic_chat_arrow_down.xml" value="0.165234375" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/ic_chat_arrow_up.xml" value="0.165234375" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/ic_chat_bg.xml" value="0.165234375" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/ic_chat_bg_active.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/ic_chat_bg_active__0.xml" value="0.165234375" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/ic_chat_bg_inactive.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/ic_chat_bg_inactive__0.xml" value="0.165234375" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/ic_chat_button.xml" value="0.165234375" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/ic_chat_input_bg.xml" value="0.165234375" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/ic_chat_message_bg.xml" value="0.165234375" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/ic_chat_scrollbar_thumb.xml" value="0.165234375" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/ic_chat_scrollbar_track.xml" value="0.165234375" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/ic_leftbutton_bg.xml" value="0.13" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/ic_news_btn_bg.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/nik_rectangle.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/rustate_hud_bg_red.xml" value="0.19166666666666668" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/server_rectangle.xml" value="0.149" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/settings_switch_thumb.xml" value="0.13" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/settings_switch_track.xml" value="0.13" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/switch_thumb_false.xml" value="0.13" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/drawable/switch_thumb_true.xml" value="0.13" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout-land/bp_main.xml" value="0.17299205648720212" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout-land/daily_prizes.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout-land/error_connection.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout-land/fragment_monitoring.xml" value="0.15629984051036683" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout-land/fragment_webview.xml" value="0.18" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout-land/item_dialog_privacy.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout-land/item_dialog_settings.xml" value="0.15104166666666666" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout-land/main_render_screen.xml" value="0.1728395061728395" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout-land/rustate_hud.xml" value="0.1728395061728395" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout-land/rustate_hud_old.xml" value="0.15625" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout-land/rustate_hud_posledniy.xml" value="0.5" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout-land/rustate_launcher_donate_fragment.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout-land/rustate_launcher_error.xml" value="0.15629984051036683" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout-land/rustate_launcher_forum_fragment.xml" value="0.1728395061728395" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout-land/rustate_launcher_fragment_webview.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout-land/rustate_launcher_home_fragment.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout-land/rustate_launcher_settings_fragment.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout-land/rustate_welcome.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout-land/splashscreen.xml" value="0.15629984051036683" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/bp_main.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/buttonpanel.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/chat.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/chat_message.xml" value="0.5" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/daily_prizes.xml" value="0.15" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/dialog_settings.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/dialog_settings_common.xml" value="0.5" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/dialog_settings_fps.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/dialog_settings_hud.xml" value="0.18" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/fragment_webview.xml" value="0.17074275362318841" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/game_buttonpanel.xml" value="0.5" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/game_chat.xml" value="0.2157622739018088" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/game_dialog_settings.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/game_input_keyboard.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/game_layout_awaiting.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/game_radial.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/item_dialog_privacy.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/item_dialog_settings.xml" value="0.17074275362318841" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/item_news.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/item_server.xml" value="0.34615384615384615" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/item_slider_texts.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/item_story.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/main_render_screen.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/notification.xml" value="0.17074275362318841" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/rustate_dialog.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/rustate_dialog_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/rustate_hud.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/rustate_launcher_donate_fragment.xml" value="0.17074275362318841" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/rustate_launcher_error.xml" value="0.1675929884566054" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/rustate_launcher_forum_fragment.xml" value="0.1675929884566054" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/rustate_launcher_fragment_webview.xml" value="0.1675929884566054" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/rustate_launcher_home_fragment.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/rustate_launcher_settings_fragment.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/rustate_loading.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/rustate_notification.xml" value="0.1675929884566054" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/rustate_playerlist.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/rustate_playerlist_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/rustate_speedometer.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/rustate_welcome.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/layout/splashscreen.xml" value="0.17074275362318841" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1425925925925926" />
+        <entry key="..\:/AndroidStudioProjects/RUSSIAN STATE/RUSSIAN-STATE/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1425925925925926" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/drawable/$avd_hide_password__0.xml" value="0.123" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/layout-land/activity_load.xml" value="0.1185006045949214" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/layout-land/activity_main.xml" value="0.1185006045949214" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/layout-land/activity_splash.xml" value="0.1185006045949214" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/layout-land/activity_start.xml" value="0.1185006045949214" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/layout-land/loadingscreen.xml" value="0.1185006045949214" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/layout-land/main_render_screen.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/layout-land/material_clock_period_toggle_land.xml" value="0.1185006045949214" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/layout-v22/abc_alert_dialog_button_bar_material.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/layout/activity_load.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/layout/activity_main.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/layout/activity_splash.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/layout/activity_start.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/layout/fragment_settings.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/layout/fragment_update.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/layout/image_frame.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/layout/item_news.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/layout/item_server.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/layout/main_render_screen.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/layout/notification.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/SMART RP LAUNCHER/app/src/main/res/layout/notification_action.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/drawable-v24/$ic_btn_gradient_blue__0.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/drawable-v24/ic_icon_home_click.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/drawable/$ic_btn_gradient_blue__0.xml" value="0.165234375" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/layout-land/activity_main.xml" value="0.1185006045949214" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/layout-land/activity_start.xml" value="0.1185006045949214" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/layout-land/fragment_settings.xml" value="0.18" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/layout-land/main_render_screen.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/layout/activity_load.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/layout/activity_main.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/layout/activity_splash.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/layout/activity_start.xml" value="0.14" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/layout/dialog_settings.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/layout/fragment_news.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/layout/fragment_servers.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/layout/fragment_settings.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/layout/fragment_update.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/layout/item_dialog_settings.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/layout/item_news.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/layout/item_server.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/layout/loadingscreen.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/layout/main_render_screen.xml" value="0.153125" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/layout/sd_dialog.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/SMART RP/app/src/main/res/layout/speedometer.xml" value="0.153125" />
+        <entry key="..\:/Ice-russia/app/src/main/res/layout/activity_load.xml" value="0.24322660098522167" />
+        <entry key="..\:/Ice-russia/app/src/main/res/layout/activity_main.xml" value="0.24322660098522167" />
+        <entry key="..\:/Ice-russia/app/src/main/res/layout/activity_splash.xml" value="0.24322660098522167" />
+        <entry key="..\:/Ice-russia/app/src/main/res/layout/activity_start.xml" value="0.24322660098522167" />
+        <entry key="..\:/Ice-russia/app/src/main/res/layout/bhud_layout.xml" value="0.24322660098522167" />
+        <entry key="..\:/Ice-russia/app/src/main/res/layout/custom_dialog.xml" value="0.138671875" />
+        <entry key="..\:/Ice-russia/app/src/main/res/layout/dialog_settings.xml" value="0.24322660098522167" />
+        <entry key="..\:/Ice-russia/app/src/main/res/layout/dialog_settings_common.xml" value="0.24322660098522167" />
+        <entry key="..\:/Ice-russia/app/src/main/res/layout/dialog_settings_weapons.xml" value="0.24322660098522167" />
+        <entry key="..\:/Ice-russia/app/src/main/res/layout/fragment_news.xml" value="0.24322660098522167" />
+        <entry key="..\:/Ice-russia/app/src/main/res/layout/fragment_servers.xml" value="0.24322660098522167" />
+        <entry key="..\:/Ice-russia/app/src/main/res/layout/fragment_settings.xml" value="0.24322660098522167" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout-land/activity_load.xml" value="0.20097799511002445" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout-land/dialog_settings.xml" value="0.30714916151809357" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout-land/fragment_servers.xml" value="0.3106796116504854" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout/activity_load.xml" value="0.33" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout/activity_main.xml" value="0.2481527093596059" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout/activity_splash.xml" value="0.2481527093596059" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout/activity_start.xml" value="0.25" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout/bhud_layout.xml" value="0.3009833262077811" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout/brp_welcome.xml" value="0.2975630611372381" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout/custom_dialog.xml" value="0.2975630611372381" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout/dialog_settings.xml" value="0.2975630611372381" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout/dialog_settings_common.xml" value="0.2975630611372381" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout/dialog_settings_fps.xml" value="0.2975630611372381" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout/dialog_settings_hud.xml" value="0.2975630611372381" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout/fragment_news.xml" value="0.3009833262077811" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout/fragment_servers.xml" value="0.3009833262077811" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout/fragment_settings.xml" value="0.3009833262077811" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout/fragment_update.xml" value="0.3009833262077811" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout/item_dialog_settings.xml" value="0.3009833262077811" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout/item_news.xml" value="0.3009833262077811" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout/item_server.xml" value="0.67" />
+        <entry key="..\:/Russia Role Play/app/src/main/res/layout/sd_dialog.xml" value="0.3009833262077811" />
+        <entry key="..\:/Vertigo rp/app/src/main/res/layout/activity_load.xml" value="0.24322660098522167" />
+        <entry key="..\:/Vertigo rp/app/src/main/res/layout/activity_main.xml" value="0.24322660098522167" />
+        <entry key="..\:/Vertigo rp/app/src/main/res/layout/activity_splash.xml" value="0.24322660098522167" />
+        <entry key="..\:/Vertigo rp/app/src/main/res/layout/activity_start.xml" value="0.24322660098522167" />
+        <entry key="..\:/Vertigo rp/app/src/main/res/layout/bhud_layout.xml" value="0.24322660098522167" />
+        <entry key="..\:/Vertigo rp/app/src/main/res/layout/dialog_settings_color.xml" value="0.24322660098522167" />
+        <entry key="..\:/Vertigo rp/app/src/main/res/layout/dialog_settings_common.xml" value="0.67" />
+        <entry key="..\:/Vertigo rp/app/src/main/res/layout/dialog_settings_old.xml" value="0.24322660098522167" />
+        <entry key="..\:/Vertigo rp/app/src/main/res/layout/dialog_settings_weapons.xml" value="0.24322660098522167" />
+        <entry key="..\:/Vertigo rp/app/src/main/res/layout/fragment_news.xml" value="0.24322660098522167" />
+        <entry key="..\:/Vertigo rp/app/src/main/res/layout/fragment_servers.xml" value="0.24322660098522167" />
+        <entry key="..\:/Vertigo rp/app/src/main/res/layout/fragment_settings.xml" value="0.24322660098522167" />
+        <entry key="..\:/Vertigo rp/app/src/main/res/layout/fragment_update.xml" value="0.24322660098522167" />
+        <entry key="..\:/Vertigo rp/app/src/main/res/layout/notification.xml" value="0.138671875" />
+        <entry key="..\:/Vertigo rp/app/src/main/res/layout/sd_dialog.xml" value="0.138671875" />
+        <entry key="..\:/Vipe/app/src/main/res/drawable/players_list_bg_value_players.xml" value="0.3675" />
+        <entry key="..\:/Vipe/app/src/main/res/layout/activity_main.xml" value="0.24445812807881773" />
+        <entry key="..\:/Vipe/app/src/main/res/layout/activity_splash.xml" value="0.24445812807881773" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

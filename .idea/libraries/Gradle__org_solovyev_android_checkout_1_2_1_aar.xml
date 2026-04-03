@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: org.solovyev.android:checkout:1.2.1@aar" external-system-id="GRADLE">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-4/f3414a3a9a93dbd9bd753859b28d923f/transformed/jetified-checkout-1.2.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-4/f3414a3a9a93dbd9bd753859b28d923f/transformed/jetified-checkout-1.2.1/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.solovyev.android/checkout/1.2.1/e8062ba3cc26162bdd64fb848d128cb0754a3905/checkout-1.2.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.solovyev.android/checkout/1.2.1/19783555c28ebec646c5d1b41f83ae2ac04a4b1/checkout-1.2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

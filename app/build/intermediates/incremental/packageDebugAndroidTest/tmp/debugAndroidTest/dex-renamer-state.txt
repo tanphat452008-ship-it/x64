@@ -1,0 +1,7 @@
+#Wed May 28 19:33:00 ICT 2025
+base.0=D\:\\Launcher-Mobileee\\Launcher-Mobileee\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
+base.1=D\:\\Launcher-Mobileee\\Launcher-Mobileee\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\4\\classes.dex
+path.0=0/classes.dex
+path.1=4/classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex
