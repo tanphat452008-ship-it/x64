@@ -14,6 +14,9 @@ jobs:
   build:
     runs-on: windows-latest
 
+    env:
+      ANDROID_NDK_ROOT: ${{ env.ANDROID_HOME }}\ndk\16.1.4479499
+
     steps:
       # 1. Checkout source
       - name: Checkout repository
@@ -23,31 +26,62 @@ jobs:
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
-          java-version: '17'
+          distribution: temurin
+          java-version: 17
 
       # 3. Set up Android SDK + NDK r16b
       - name: Set up Android SDK & NDK r16b
         uses: android-actions/setup-android@v3
         with:
-          packages: "platforms;android-33 build-tools;33.0.2 ndk;16.1.4479499 cmake;3.10.2.4988404"
+          packages: >
+            platforms;android-33
+            build-tools;33.0.2
+            ndk;16.1.4479499
+            cmake;3.10.2.4988404
           cmdline-tools-version: 12266719
           accept-android-sdk-licenses: true
 
       # 4. Enable long paths for Windows
       - name: Enable long paths
+        shell: powershell
         run: |
           git config --system core.longpaths true
           reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f
-        shell: powershell
 
-      # 5. Build Debug APK
+      # 5. Build libsamp.so
+      - name: Build libsamp.so
+        shell: cmd
+        run: |
+          echo ANDROID_NDK_ROOT=%ANDROID_NDK_ROOT%
+
+          cd app\jni
+
+          ndk-build.cmd ^
+            NDK_PROJECT_PATH=. ^
+            APP_BUILD_SCRIPT=Android.mk ^
+            NDK_APPLICATION_MK=Application.mk ^
+            APP_ABI=armeabi-v7a ^
+            NDK_OUT=build\obj ^
+            NDK_LIBS_OUT=build\libs
+
+      # 6. Copy libsamp.so to jniLibs
+      - name: Copy libsamp.so
+        shell: powershell
+        run: |
+          New-Item -ItemType Directory -Force -Path "app/src/main/jniLibs/armeabi-v7a"
+
+          Copy-Item `
+            "app/jni/build/libs/armeabi-v7a/libsamp.so" `
+            "app/src/main/jniLibs/armeabi-v7a/libsamp.so" `
+            -Force
+
+      # 7. Build Debug APK
       - name: Build Debug APK
         shell: cmd
         run: |
           call gradlew.bat assembleDebug --stacktrace
 
-      # 6. Upload APK to GitHub Release
+      # 8. Upload APK to GitHub Release
       - name: Upload APK to Release
         uses: softprops/action-gh-release@v2
         if: success()
@@ -56,8 +90,8 @@ jobs:
           tag_name: build-${{ github.run_number }}
           name: Debug Build v${{ github.run_number }}
           body: |
-            Bản build mới nhất từ nhánh ${{ github.ref_name }}.
-            Mã commit: ${{ github.sha }}
+            Bản build mới nhất từ nhánh ${{ github.ref_name }}
+            Commit: ${{ github.sha }}
           draft: false
           prerelease: false
         env:
