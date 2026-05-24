@@ -62,7 +62,7 @@ void CDialogWindow::Show(bool bShow)
 	if (pNetGame)
 	{
 		if (pGame && pGame->FindPlayerPed()
-			&& !pNetGame->GetTextDrawPool()->m_bSelectState)
+			&& !pNetGame->GetTextDrawPool()->GetState()) // <-- ĐÃ SỬA Ở ĐÂY
 			//if(!pGame->FindPlayerPed()->GetVehicleSeatID()) 
 			pGame->FindPlayerPed()->TogglePlayerControllable(!bShow);
 	}
