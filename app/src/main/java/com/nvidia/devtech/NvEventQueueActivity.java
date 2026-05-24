@@ -1527,6 +1527,12 @@ private CefClientManager mClientManager = null;
         if (mAndroidUI == null) {
             mAndroidUI = (FrameLayout) findViewById(R.id.ui_layout);
         }
+		if (mJavaManager.isShow()) {
+            if (z2)
+                mJavaManager.hideBrowserView();
+            else
+                mJavaManager.showBrowserView();
+		}
         runOnUiThread(() -> mAndroidUI.setVisibility(z2 ? View.GONE:View.VISIBLE));
     }
 
