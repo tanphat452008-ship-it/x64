@@ -49,7 +49,7 @@ class CJavaWrapper
 	jmethodID s_showDonate;
 	jmethodID s_updateDonate;
 	jmethodID s_show_sc;
-	
+	jmethodID s_brNotification;
 public:
 	JNIEnv* GetEnv();
 
@@ -84,6 +84,8 @@ public:
 	void ShowNotification(int delay, const char* name, const char* msg, const char* url);
 
 	void ShowDonate(int money, int bc);
+    void ShowBrNotification(const char* text, int type, int duration);
+    
 	void UpdateDonate(int money, int bc);
 	void show_sc(int money, int bc);
 
