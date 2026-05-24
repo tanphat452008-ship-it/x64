@@ -991,6 +991,30 @@ void CJavaWrapper::HidePhone()
 	}
     env->CallVoidMethod(this->activity, this->s_hidephone);
 }
+void CJavaWrapper::ShowBrNotification(const char* text, int type, int duration)
+{
+	JNIEnv* env = GetEnv();
+	if (!env)
+	{
+		Log("No env");
+		return;
+	}
+
+	jclass strClass = env->FindClass("java/lang/String");
+	jmethodID ctorID = env->GetMethodID(strClass, "<init>", "([BLjava/lang/String;)V");
+	jstring encoding = env->NewStringUTF("UTF-8");
+
+	jbyteArray bytes = env->NewByteArray(strlen(text));
+	env->SetByteArrayRegion(bytes, 0, strlen(text), (jbyte*)text);
+	jstring jtext = (jstring)env->NewObject(strClass, ctorID, bytes, encoding);
+
+	env->CallVoidMethod(this->activity, this->s_brNotification, jtext, type, duration);
+
+	env->DeleteLocalRef(strClass);
+	env->DeleteLocalRef(encoding);
+	env->DeleteLocalRef(bytes);
+	env->DeleteLocalRef(jtext);
+}
 
 void CJavaWrapper::ShowNotification(int delay, const char* name, const char* msg, const char* url) {
 
@@ -1104,7 +1128,7 @@ CJavaWrapper::CJavaWrapper(JNIEnv* env, jobject activity)
     s_hidephone = env->GetMethodID(nvEventClass, OBFUSCATE("hidePhone"), OBFUSCATE("()V"));
 	s_posttwitter = env->GetMethodID(nvEventClass, OBFUSCATE("Posttwitter"), OBFUSCATE("(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V"));
 	s_notification = env->GetMethodID(nvEventClass, OBFUSCATE("showNotification"), OBFUSCATE("(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"));
-
+	s_brNotification = env->GetMethodID(nvEventClass, OBFUSCATE("showBrNotification"), OBFUSCATE("(Ljava/lang/String;II)V"));
 	s_showDonate = env->GetMethodID(nvEventClass, "showDonate", "(II)V");
 	s_updateDonate = env->GetMethodID(nvEventClass, "updateDonate", "(II)V");
 	s_show_sc = env->GetMethodID(nvEventClass, "show_sc", "(II)V");
