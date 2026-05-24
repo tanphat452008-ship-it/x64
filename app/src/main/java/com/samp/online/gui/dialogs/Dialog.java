@@ -154,7 +154,9 @@ public class Dialog {
         if (!this.mCurrentInputText.equals(this.mInput.getText().toString())) {
             this.mCurrentInputText = this.mInput.getText().toString();
         }
-        ((InputMethodManager) NvEventQueueActivity.getInstance().getSystemService("input_method")).hideSoftInputFromWindow(this.mInput.getWindowToken(), 0);
+        // FIX: Hide keyboard khi đóng dialog
+        InputMethodManager imm = (InputMethodManager) NvEventQueueActivity.getInstance().getSystemService("input_method");
+        imm.hideSoftInputFromWindow(this.mInput.getWindowToken(), 0);
         try {
             NvEventQueueActivity.getInstance().sendDialogResponse(btnId, this.mCurrentDialogId, this.mCurrentListItem, this.mCurrentInputText.getBytes("UTF-8"));
             Utils.HideLayout(this.mMainLayout, true);
