@@ -10,6 +10,12 @@ LOCAL_MODULE := libspeex
 LOCAL_SRC_FILES := libraries/libspeex.a
 include $(PREBUILT_STATIC_LIBRARY)
 
+include $(PREBUILT_STATIC_LIBRARY)
+include $(CLEAR_VARS)
+LOCAL_MODULE    := libSAMPMobileCef 
+LOCAL_SRC_FILES := vendor/cef/libSAMPMobileCef.a
+
+LOCAL_STATIC_LIBRARIES := libSAMPMobileCef
 include $(CLEAR_VARS)
 LOCAL_MODULE := samp
 LOCAL_LDLIBS := -lm -llog -lc -lz -ljnigraphics -landroid -lEGL -lGLESv2 -lOpenSLES
