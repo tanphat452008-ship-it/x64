@@ -61,7 +61,7 @@
             android:launchMode="singleTask" 
             android:screenOrientation="landscape" 
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" 
-            android:windowSoftInputMode="adjustNothing"
+            android:windowSoftInputMode="adjustResize"
             android:exported="false" />
 
         <activity 
