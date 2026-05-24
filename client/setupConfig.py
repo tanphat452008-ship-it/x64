@@ -4,7 +4,7 @@ import os
 
 path = "/storage/emulated/0/Android/"
 url = "http://104.234.180.156/Mobile/Game/"
-
+//a
 # Define the list of special files
 special_files = ["special_file_1.txt", "special_file_2.txt"]  # Add your special file names here
 
