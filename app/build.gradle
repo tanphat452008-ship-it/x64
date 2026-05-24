@@ -103,7 +103,7 @@ dependencies {
     implementation 'com.yandex.android:mobmetricalib:5.0.0'
     implementation 'org.solovyev.android:checkout:1.2.1'
     implementation 'commons-io:commons-io:2.6'
-    implementation files("libs/sampmobilecef-...-release.aar")
+    implementation files("libs/sampmobilecef-1.0.0-release.aar")
     implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
     implementation 'net.lingala.zip4j:zip4j:2.10.0'
     implementation group: 'org.ini4j', name: 'ini4j', version: '0.5.4'
