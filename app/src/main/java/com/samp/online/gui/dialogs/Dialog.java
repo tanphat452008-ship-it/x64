@@ -69,16 +69,15 @@ public class Dialog {
         for (int i = 0; i < mHeadersLayout.getChildCount(); i++) {
             this.mHeadersList.add((TextView) mHeadersLayout.getChildAt(i));
         }
-        // FIX: Auto submit dialog when Enter is pressed
+        
         this.mInput.setOnEditorActionListener((textView, i, keyEvent) -> {
             Editable editableText;
             if ((i != 6 && i != 5) || (editableText = this.mInput.getText()) == null) {
                 return false;
             }
             this.mCurrentInputText = editableText.toString();
-            // Auto submit on Enter key (EditorInfo.IME_ACTION_GO or EditorInfo.IME_ACTION_DONE)
             sendDialogResponse(1);
-            return true;  // Consume the event
+            return true;  
         });
         this.mInput.setOnClickListener(view ->
         {
@@ -100,7 +99,7 @@ public class Dialog {
         else if(dialogTypeId == 1)
         {
             mInput.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-            this.mInputLayout.setVisibility(View.VISIBLE); // выполняется инпут
+            this.mInputLayout.setVisibility(View.VISIBLE); 
             this.mMsgBoxLayout.setVisibility(View.VISIBLE);
             this.mListLayout.setVisibility(View.GONE);
         }
@@ -114,7 +113,7 @@ public class Dialog {
         else
         {
             this.mInputLayout.setVisibility(View.GONE);
-            this.mMsgBoxLayout.setVisibility(View.GONE); // LIST, TABLIST, TABLIST_HEADER
+            this.mMsgBoxLayout.setVisibility(View.GONE); 
             this.mListLayout.setVisibility(View.VISIBLE);
             loadTabList(content);
             ArrayList<String> fixFieldsForDialog = Utils.fixFieldsForDialog(this.mRowsList);
@@ -157,7 +156,6 @@ public class Dialog {
         if (!this.mCurrentInputText.equals(this.mInput.getText().toString())) {
             this.mCurrentInputText = this.mInput.getText().toString();
         }
-        // FIX: Hide keyboard khi đóng dialog
         InputMethodManager imm = (InputMethodManager) NvEventQueueActivity.getInstance().getSystemService("input_method");
         imm.hideSoftInputFromWindow(this.mInput.getWindowToken(), 0);
         try {
