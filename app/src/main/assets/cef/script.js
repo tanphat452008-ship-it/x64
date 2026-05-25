@@ -52,7 +52,7 @@ function showAlert(eventData) {
 function createToast(type, title, message) {
     const container = document.getElementById("toast-container");
 
-    // ĐÃ SỬA: Dọn sạch hộp chứa để xóa bỏ hoàn toàn tin nhắn cũ trước khi hiện tin mới
+    // Dọn sạch hộp chứa để xóa bỏ hoàn toàn tin nhắn cũ trước khi hiện tin mới
     container.innerHTML = ""; 
 
     const toast = document.createElement("div");
@@ -97,11 +97,21 @@ function showNotification(eventData) {
     }
     createToast(type, title, message);
 }
-/* ================= INVENTORY ================= */
 
+/* ================= INVENTORY (ĐÃ SỬA ĐỔI & THÊM LOGIC) ================= */
+
+// Biến toàn cục để lưu thông tin vật phẩm đang được người chơi ấn chọn
+let selectedItem = null; 
+
+// Sự kiện bấm nút đóng túi đồ lớn
 document.getElementById('close-inv-btn').onclick = () => {
     document.getElementById('inventory-container').classList.add('hidden');
-    // Gửi tín hiệu về cho Pawn biết người chơi đã đóng túi đồ (để nhả chuột/freeze)
+    
+    // Tự động đóng luôn các menu con nếu đang mở
+    closeActionMenu();
+    closeInfoMenu();
+
+    // Gửi tín hiệu về cho Pawn biết người chơi đã đóng túi đồ
     Cef.sendEvent("inventory_action", JSON.stringify(["close", 0]));
 };
 
@@ -113,13 +123,15 @@ function renderInventory(eventData) {
 
     if (action === "hide") {
         container.classList.add('hidden');
+        closeActionMenu();
+        closeInfoMenu();
         return;
     }
 
     // Mở túi đồ
     container.classList.remove('hidden');
     
-    // Parse dữ liệu vật phẩm Pawn gửi qua (data[1] chứa chuỗi JSON mảng vật phẩm)
+    // Parse dữ liệu vật phẩm Pawn gửi qua
     const items = JSON.parse(data[1]); 
     const grid = document.getElementById('inv-grid');
     grid.innerHTML = ""; // Xóa dữ liệu cũ
@@ -136,10 +148,10 @@ function renderInventory(eventData) {
                 <div class="item-name">${items[i].name}</div>
                 <div class="item-qty">x${items[i].amount}</div>
             `;
-            // Khi click vào vật phẩm -> Gửi Event về Pawn (Action: "use", ItemID)
+            
+            // ĐÃ SỬA: Khi click vào vật phẩm -> Hiện bảng Menu tương tác chứ không dùng luôn
             slot.onclick = () => {
-                let outData = ["use", items[i].id];
-                Cef.sendEvent("inventory_action", JSON.stringify(outData));
+                openActionMenu(items[i]);
             };
         } else {
             // Slot trống
@@ -149,6 +161,61 @@ function renderInventory(eventData) {
         grid.appendChild(slot);
     }
 }
+
+// ---- CÁC HÀM XỬ LÝ ĐÓNG / MỞ BẢNG TƯƠNG TÁC ----
+
+function openActionMenu(item) {
+    selectedItem = item; // Gán vật phẩm được chọn vào biến tạm
+    document.getElementById('action-item-name').innerText = item.name;
+    document.getElementById('item-action-modal').classList.remove('hidden');
+}
+
+function closeActionMenu() {
+    document.getElementById('item-action-modal').classList.add('hidden');
+}
+
+function closeInfoMenu() {
+    document.getElementById('item-info-modal').classList.add('hidden');
+}
+
+// ---- SỰ KIỆN KHI BẤM CÁC NÚT TRONG MENU TƯƠNG TÁC ----
+
+// 1. Xử lý khi bấm nút "SỬ DỤNG"
+document.getElementById('btn-use-item').onclick = () => {
+    if (!selectedItem) return;
+    
+    // Gửi Action "use" kèm ID vật phẩm về cho Pawn xử lý
+    Cef.sendEvent("inventory_action", JSON.stringify(["use", selectedItem.id]));
+    
+    closeActionMenu(); // Dùng xong tự ẩn menu tương tác đi
+};
+
+// 2. Xử lý khi bấm nút "THÔNG TIN"
+document.getElementById('btn-info-item').onclick = () => {
+    if (!selectedItem) return;
+    
+    document.getElementById('info-item-title').innerText = selectedItem.name;
+    
+    // Nếu trong chuỗi JSON từ Pawn gửi qua có trường .desc thì hiện, không thì hiện mặc định
+    document.getElementById('info-item-desc').innerText = selectedItem.desc || "Vật phẩm này không có mô tả chi tiết.";
+    
+    // Mở bảng thông tin đè lên
+    document.getElementById('item-info-modal').classList.remove('hidden');
+};
+
+// 3. Xử lý khi bấm nút "VỨT BỎ"
+document.getElementById('btn-drop-item').onclick = () => {
+    if (!selectedItem) return;
+    
+    // Gửi Action "drop" kèm ID vật phẩm về cho Pawn xử lý trừ đồ / tạo vật thể dưới đất
+    Cef.sendEvent("inventory_action", JSON.stringify(["drop", selectedItem.id]));
+    
+    closeActionMenu(); // Vứt xong tự ẩn menu tương tác đi
+};
+
+// Đăng ký sự kiện cho các nút quay lại/đóng của menu con
+document.getElementById('btn-close-action').onclick = closeActionMenu;
+document.getElementById('btn-close-info').onclick = closeInfoMenu;
 
 // Đăng ký event để Pawn gọi
 Cef.registerEventCallback("inventory_show", "renderInventory");
