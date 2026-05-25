@@ -1,3 +1,5 @@
+// ================= ALERT =================
+
 function createAlert(title, message, callback) {
 
     document.getElementById('alert-title').innerText = title;
@@ -8,27 +10,22 @@ function createAlert(title, message, callback) {
     overlay.classList.remove('hidden');
 
     document.getElementById('okay-button').onclick = () => {
-
         hideAlert();
         callback(true);
     };
 
     document.getElementById('cancel-button').onclick = () => {
-
         hideAlert();
         callback(false);
     };
 }
 
 function hideAlert() {
-
     const overlay = document.getElementById('alert-overlay');
-
     overlay.classList.add('hidden');
 }
 
 function showAlert(eventData) {
-
     const eventDataJson = JSON.parse(eventData);
 
     const alertId = parseInt(eventDataJson[0]);
@@ -36,7 +33,6 @@ function showAlert(eventData) {
     const alertMessage = eventDataJson[2];
 
     createAlert(alertTitle, alertMessage, (response) => {
-
         let outgoingEventData = new Array();
 
         outgoingEventData.push(alertId);
@@ -54,9 +50,7 @@ function showAlert(eventData) {
 /* ================= TOAST NOTIFICATION ================= */
 
 function createToast(type, title, message) {
-
     const container = document.getElementById("toast-container");
-
     const toast = document.createElement("div");
 
     toast.classList.add("toast");
@@ -71,7 +65,6 @@ function createToast(type, title, message) {
 
     // Auto remove
     setTimeout(() => {
-
         toast.classList.add("hide");
 
         setTimeout(() => {
@@ -82,13 +75,22 @@ function createToast(type, title, message) {
 }
 
 function showNotification(eventData) {
-
     const data = JSON.parse(eventData);
 
-    const type = data[0];
-    const title = data[1];
-    const message = data[2];
+    const type = data[0];     // Lấy loại thông báo: success, error, warning, info
+    const message = data[2];  // Lấy nội dung thông báo từ chuỗi Pawn gửi qua
 
+    // Tự động đặt lại Tiêu đề viết hoa dựa theo từng Loại (Type)
+    let title = "THÔNG BÁO";
+    if (type === "error") {
+        title = "ERROR";
+    } else if (type === "warning") {
+        title = "WARNING";
+    } else if (type === "info") {
+        title = "INFO";
+    } else if (type === "success") {
+        title = "SUCCESS";
+    }
     createToast(type, title, message);
 }
 
@@ -102,4 +104,4 @@ Cef.registerEventCallback(
 Cef.registerEventCallback(
     "notification_show",
     "showNotification"
-	);
+);
