@@ -51,6 +51,10 @@ function showAlert(eventData) {
 
 function createToast(type, title, message) {
     const container = document.getElementById("toast-container");
+
+    // ĐÃ SỬA: Dọn sạch hộp chứa để xóa bỏ hoàn toàn tin nhắn cũ trước khi hiện tin mới
+    container.innerHTML = ""; 
+
     const toast = document.createElement("div");
 
     toast.classList.add("toast");
