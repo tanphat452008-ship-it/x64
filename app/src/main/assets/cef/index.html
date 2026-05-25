@@ -36,14 +36,58 @@
 
     <div id="inventory-container" class="hidden">
         <div class="inv-header">
-            <span class="inv-title">TÚI ĐỒ CỦA BẠN</span>
+            <span class="inv-title">TÚI ĐỒ & TRANG BỊ</span>
             <span class="close-inv" id="close-inv-btn">✖</span>
         </div>
         
-        <div class="inv-grid" id="inv-grid">
+        <div class="inv-main-content">
+
+            <div class="inv-grid-section">
+                <div class="section-title">HÀNH TRANG</div>
+                <div class="inv-grid" id="inv-grid">
+                    </div>
             </div>
 
-        <div id="item-action-modal" class="hidden">
+            <div class="inv-equip-section">
+                <div class="section-title">TRANG BỊ</div>
+                <div class="equip-doll-container">
+                    
+                    <img src="images/skins/skin_0.png" id="char-doll-img" alt="Character">
+
+                    <div class="equip-column column-left">
+                        <div class="inv-slot equip-slot" id="equip-head" data-slot-type="head">
+                            <div class="slot-placeholder">Nón</div>
+                        </div>
+                        <div class="inv-slot equip-slot" id="equip-body" data-slot-type="body">
+                            <div class="slot-placeholder">Áo</div>
+                        </div>
+                        <div class="inv-slot equip-slot" id="equip-legs" data-slot-type="legs">
+                            <div class="slot-placeholder">Quần</div>
+                        </div>
+                        <div class="inv-slot equip-slot" id="equip-feet" data-slot-type="feet">
+                            <div class="slot-placeholder">Giày</div>
+                        </div>
+                    </div>
+
+                    <div class="equip-column column-right">
+                        <div class="inv-slot equip-slot" id="equip-hand" data-slot-type="hand">
+                            <div class="slot-placeholder">Găng</div>
+                        </div>
+                        <div class="inv-slot equip-slot" id="equip-weapon-1" data-slot-type="weapon1">
+                            <div class="slot-placeholder">Súng 1</div>
+                        </div>
+                        <div class="inv-slot equip-slot" id="equip-weapon-2" data-slot-type="weapon2">
+                            <div class="slot-placeholder">Súng 2</div>
+                        </div>
+                        <div class="inv-slot equip-slot" id="equip-acc" data-slot-type="acc">
+                            <div class="slot-placeholder">Phụ kiện</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div> <div id="item-action-modal" class="hidden">
             <div class="action-box">
                 <div id="action-item-name">TÊN VẬT PHẨM</div>
                 <div class="action-buttons">
@@ -63,7 +107,7 @@
             </div>
         </div>
         
-        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
