@@ -284,3 +284,21 @@ Cef.registerEventCallback("inventory_show", "renderInventory");
 
 Cef.registerEventCallback("alert_show", "showAlert");
 Cef.registerEventCallback("notification_show", "showNotification");
+/* ================= UPDATE HUD STATUS (FOOD & WATER) ================= */
+
+function updatePlayerStatus(eventData) {
+    const data = JSON.parse(eventData);
+    const food = parseInt(data[0]);
+    const water = parseInt(data[1]);
+
+    // Cập nhật thanh thức ăn (Hunger)
+    document.getElementById('food-fill').style.width = food + '%';
+    document.getElementById('food-text').innerText = food + '%';
+
+    // Cập nhật thanh nước (Thirst)
+    document.getElementById('water-fill').style.width = water + '%';
+    document.getElementById('water-text').innerText = water + '%';
+}
+
+// Đăng ký sự kiện với hệ thống CEF để Pawn có thể gọi sang
+Cef.registerEventCallback("hud_update", "updatePlayerStatus");
