@@ -330,3 +330,57 @@ function updatePlayerStatus(eventData) {
         overlay.classList.remove('dehydration-effect');
     }
 }
+/* === THÊM VÀO SCRIPT.JS CEF CỦA BẠN === */
+
+let weedMinigameScore = 0;
+let weedTargetKey = '';
+let minigameActive = false;
+const WEED_KEYS = ['y', 'n', 'h', 'Escape']; 
+
+function startWeedMinigame(eventData) {
+    weedMinigameScore = 0;
+    minigameActive = true;
+    
+    // Giao diện (Bạn tự tạo 1 thẻ Div id="weed-minigame" trong HTML)
+    document.getElementById('weed-minigame').classList.remove('hidden');
+    pickNextWeedKey();
+}
+
+function pickNextWeedKey() {
+    weedTargetKey = WEED_KEYS[Math.floor(Math.random() * WEED_KEYS.length)];
+    // In ra màn hình cho người chơi biết cần bấm nút gì
+    document.getElementById('weed-key-hint').innerText = weedTargetKey.toUpperCase();
+}
+
+document.addEventListener('keydown', (e) => {
+    if (!minigameActive) return;
+
+    if (e.key.toLowerCase() === weedTargetKey.toLowerCase() || e.key === weedTargetKey) {
+        weedMinigameScore += 10; // Bấm trúng + 10đ
+    } else {
+        weedMinigameScore -= 11; // Bấm sai - 11đ
+    }
+    
+    document.getElementById('weed-score').innerText = `Điểm: ${weedMinigameScore}`;
+
+    // Đạt 100 điểm thì Thắng
+    if (weedMinigameScore >= 100) {
+        endWeedMinigame("win");
+    } 
+    // m điểm thì Thua
+    else if (weedMinigameScore <= -30) {
+        endWeedMinigame("lose");
+    } else {
+        pickNextWeedKey(); // Sinh nút tiếp theo
+    }
+});
+
+function endWeedMinigame(result) {
+    minigameActive = false;
+    document.getElementById('weed-minigame').classList.add('hidden');
+    // Gửi kết quả về cho Pawn xử lý (Hàm OnWeedMinigameDone ở trên)
+    Cef.sendEvent("weed_minigame_result", JSON.stringify([result]));
+}
+
+// Đăng ký event với Pawn
+Cef.registerEventCallback("weed_minigame_show", "startWeedMinigame");
