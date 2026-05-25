@@ -1,40 +1,105 @@
 function createAlert(title, message, callback) {
+
     document.getElementById('alert-title').innerText = title;
     document.getElementById('alert-message').innerText = message;
 
     const overlay = document.getElementById('alert-overlay');
+
     overlay.classList.remove('hidden');
 
     document.getElementById('okay-button').onclick = () => {
+
         hideAlert();
         callback(true);
     };
 
     document.getElementById('cancel-button').onclick = () => {
+
         hideAlert();
         callback(false);
     };
 }
 
 function hideAlert() {
+
     const overlay = document.getElementById('alert-overlay');
+
     overlay.classList.add('hidden');
 }
 
 function showAlert(eventData) {
-	const eventDataJson = JSON.parse(eventData);
-	const alertId = parseInt(eventDataJson[0]);
-	const alertTitle = eventDataJson[1];
-	const alertMessage = eventDataJson[2];
-	
-	createAlert(alertTitle, alertMessage, (response) => {
-		let outgoingEventData = new Array();
-		outgoingEventData.push(alertId);
-		outgoingEventData.push(response);
-		
-		console.log(`Response status: ${response}`);
-		Cef.sendEvent("alert_response", JSON.stringify(outgoingEventData));
-	});
+
+    const eventDataJson = JSON.parse(eventData);
+
+    const alertId = parseInt(eventDataJson[0]);
+    const alertTitle = eventDataJson[1];
+    const alertMessage = eventDataJson[2];
+
+    createAlert(alertTitle, alertMessage, (response) => {
+
+        let outgoingEventData = new Array();
+
+        outgoingEventData.push(alertId);
+        outgoingEventData.push(response);
+
+        console.log(`Response status: ${response}`);
+
+        Cef.sendEvent(
+            "alert_response",
+            JSON.stringify(outgoingEventData)
+        );
+    });
 }
 
-Cef.registerEventCallback("alert_show", "showAlert");
+/* ================= TOAST NOTIFICATION ================= */
+
+function createToast(type, title, message) {
+
+    const container = document.getElementById("toast-container");
+
+    const toast = document.createElement("div");
+
+    toast.classList.add("toast");
+    toast.classList.add(type);
+
+    toast.innerHTML = `
+        <div class="toast-title">${title}</div>
+        <div class="toast-message">${message}</div>
+    `;
+
+    container.appendChild(toast);
+
+    // Auto remove
+    setTimeout(() => {
+
+        toast.classList.add("hide");
+
+        setTimeout(() => {
+            toast.remove();
+        }, 400);
+
+    }, 5000);
+}
+
+function showNotification(eventData) {
+
+    const data = JSON.parse(eventData);
+
+    const type = data[0];
+    const title = data[1];
+    const message = data[2];
+
+    createToast(type, title, message);
+}
+
+/* ================= REGISTER EVENTS ================= */
+
+Cef.registerEventCallback(
+    "alert_show",
+    "showAlert"
+);
+
+Cef.registerEventCallback(
+    "notification_show",
+    "showNotification"
+	);
