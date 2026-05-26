@@ -170,3 +170,338 @@ body {
 .auth-button:active {
     transform: scale(0.97); /* Hiệu ứng lún xuống khi click */
 }
+/* =========================================================================
+   1. THIẾT LẬP CHUNG & KHUNG CHÍNH (DARK THEME CYBERPUNK)
+   ========================================================================= */
+.inv-main {
+    display: flex;
+    background: linear-gradient(145deg, rgba(10, 17, 26, 0.98), rgba(6, 11, 18, 0.98));
+    border: 1px solid rgba(0, 229, 255, 0.15);
+    border-radius: 12px;
+    padding: 25px;
+    width: 950px;
+    height: 550px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 
+                0 0 30px rgba(0, 229, 255, 0.05);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Căn giữa màn hình game di động */
+    user-select: none;
+}
+
+/* Bố cục 2 Panel */
+.left-panel {
+    width: 65%;
+    padding-right: 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.right-panel {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 25px;
+    background: rgba(255, 255, 255, 0.01);
+    border-radius: 8px;
+    position: relative;
+}
+
+/* =========================================================================
+   2. KHU VỰC Ô TRANG BỊ (EQUIPMENT SECTIONS)
+   ========================================================================= */
+.equip-section {
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.section-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #4b6b88;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.equip-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+/* Style các ô trang bị */
+.equip-slot {
+    width: 65px;
+    height: 65px;
+    background: radial-gradient(circle, rgba(20, 32, 48, 0.6) 0%, rgba(13, 21, 33, 0.8) 100%);
+    border: 1px dashed rgba(0, 229, 255, 0.3);
+    border-radius: 6px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.equip-slot:hover {
+    border-style: solid;
+    border-color: #00e5ff;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+    background: rgba(0, 229, 255, 0.05);
+}
+
+/* Hiển thị chữ gợi ý (Nón, Áo, Quần...) khi ô trống */
+.equip-slot.empty::before {
+    content: attr(data-slot);
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    color: #4b6b88;
+    font-weight: 500;
+}
+
+/* =========================================================================
+   3. TIÊU ĐỀ & LƯỚI Ô ĐỒ (INVENTORY GRID)
+   ========================================================================= */
+.inv-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 0 2px;
+}
+
+.inv-header .title {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ffffff, #00e5ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.inv-header .slot-count {
+    color: #00e5ff;
+    font-size: 12px;
+    font-weight: bold;
+    background: rgba(0, 229, 255, 0.1);
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+/* Lưới chứa 56 ô đồ có tính năng lướt lên lướt xuống mượt mà */
+.inv-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 cột chuẩn như hình mẫu */
+    gap: 8px;
+    height: 310px;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+/* Từng ô vật phẩm hành trang */
+.inv-slot {
+    background: rgba(17, 28, 42, 0.7);
+    border: 1px solid rgba(32, 51, 74, 0.8);
+    border-radius: 6px;
+    aspect-ratio: 1/1;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.inv-slot:hover {
+    border-color: #00e5ff;
+    background: rgba(0, 229, 255, 0.08);
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Số lượng vật phẩm góc trên (Ví dụ: x20) */
+.item-qty {
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    color: #00e5ff;
+    font-size: 11px;
+    font-weight: 700;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* =========================================================================
+   4. TÙY CHỈNH THANH CUỘN (SCROLLBAR) SIÊU MẢNH
+   ========================================================================= */
+.inv-grid::-webkit-scrollbar {
+    width: 4px;
+}
+.inv-grid::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.01);
+    border-radius: 10px;
+}
+.inv-grid::-webkit-scrollbar-thumb {
+    background: rgba(0, 229, 255, 0.4);
+    border-radius: 10px;
+}
+.inv-grid::-webkit-scrollbar-thumb:hover {
+    background: #00e5ff;
+}
+
+/* =========================================================================
+   5. PANEL THÔNG TIN CHI TIẾT BÊN PHẢI (DETAILS PANEL)
+   ========================================================================= */
+/* Trạng thái trống chưa chọn đồ */
+.detail-placeholder {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #4b6b88;
+    font-size: 13px;
+    text-align: center;
+    font-style: italic;
+}
+
+.detail-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+/* Vòng tròn xem trước icon vật phẩm lớn */
+.item-preview {
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, rgba(0, 229, 255, 0.05) 0%, rgba(0, 0, 0, 0.3) 70%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    border: 1px solid rgba(0, 229, 255, 0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+#detail-name {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 15px 0 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Nhãn độ hiếm (Rarity Badges) */
+.rarity {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 12px;
+    border-radius: 4px;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+.rarity.common { background: rgba(144, 164, 174, 0.15); color: #b0bec5; border: 1px solid rgba(144, 164, 174, 0.3); }
+.rarity.rare { background: rgba(0, 229, 255, 0.15); color: #00e5ff; border: 1px solid rgba(0, 229, 255, 0.3); }
+.rarity.legendary { background: rgba(255, 152, 0, 0.15); color: #ff9800; border: 1px solid rgba(255, 152, 0, 0.3); text-shadow: 0 0 5px rgba(255,152,0,0.5); }
+
+/* Khung mô tả vật phẩm */
+.item-desc {
+    font-size: 13px;
+    color: #a0aec0;
+    text-align: center;
+    margin-bottom: auto; /* Tự động đẩy bộ nút hành động xuống đáy */
+    line-height: 1.5;
+    padding: 0 10px;
+    height: 70px;
+    overflow-y: auto;
+}
+
+/* =========================================================================
+   6. HỆ THỐNG CÁC NÚT HÀNH ĐỘNG (ACTION BUTTONS)
+   ========================================================================= */
+.action-buttons {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.action-buttons button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Nút Sử dụng chính (Cyan Neon) */
+.btn-use {
+    background: #00e5ff;
+    color: #060b12;
+    box-shadow: 0 4px 15px rgba(0, 229, 255, 0.2);
+}
+.btn-use:hover {
+    background: #00b8d4;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 229, 255, 0.3);
+}
+
+/* Nút Giao dịch (Dark Slate) */
+.btn-trade {
+    background: #172433;
+    color: #ffffff;
+    border: 1px solid #23364d;
+}
+.btn-trade:hover {
+    background: #20334a;
+    color: #00e5ff;
+    border-color: #00e5ff;
+}
+
+/* Nút Xóa / Vứt bỏ (Màu đỏ cảnh báo) */
+.btn-delete {
+    background: rgba(211, 47, 47, 0.1);
+    color: #ef5350;
+    border: 1px solid rgba(211, 47, 47, 0.3);
+}
+.btn-delete:hover {
+    background: #d32f2f;
+    color: #ffffff;
+    border-color: #d32f2f;
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+}
+
+/* =========================================================================
+   7. TRẠNG THÁI ACTIVE ĐỒNG BỘ VỚI LOGIC JS (CLICK ĐỔI MÀU VIỀN)
+   ========================================================================= */
+.active-slot {
+    border-color: #00e5ff !important;
+    background: rgba(0, 229, 255, 0.15) !important;
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.4) !important;
+    border-style: solid !important; /* Áp dụng cho cả ô Trang bị nét đứt */
+}
+
+/* Tiện ích ẩn phần tử */
+.hidden {
+    display: none !important;
+}
