@@ -1,507 +1,606 @@
+/* =========================================================================
+   MOBILE INVENTORY UI - OPTIMIZED FOR SA-MP MOBILE CEF
+   Nhân loại cuối cùng cũng nhận ra nhét UI PC 950px vào điện thoại 6 inch
+   là ý tưởng tệ. Mất có vài năm thôi.
+   ========================================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: transparent;
+    background: transparent;
+    overflow: hidden;
+    user-select: none;
 }
+
+/* =========================================================================
+   GLOBAL
+   ========================================================================= */
 
 .hidden {
     display: none !important;
 }
 
+/* =========================================================================
+   ALERT
+   ========================================================================= */
+
 #alert-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    z-index: 9999;
 }
 
 .alert-box {
-    background-color: white;
-    border-radius: 8px;
-    width: 300px;
-    text-align: center;
-}
+    width: 82%;
+    max-width: 320px;
 
-.alert-header {
-    background-color: #609ad4;
-    padding: 10px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    position: relative;
-}
+    background: #fff;
 
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 18px;
+    border-radius: 10px;
+
+    overflow: hidden;
 }
 
 .alert-content {
-    padding: 20px;
+    padding: 18px;
+    text-align: center;
 }
 
 .alert-icon {
-    font-size: 40px;
+    font-size: 38px;
     color: #609ad4;
     margin-bottom: 10px;
 }
 
 .alert-title {
-    font-weight: bold;
     font-size: 18px;
+    font-weight: bold;
+
     margin-bottom: 10px;
 }
 
 .alert-message {
-    margin-bottom: 20px;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.alert-buttons {
+    display: flex;
+    gap: 10px;
 }
 
 .alert-buttons button {
-    padding: 10px 20px;
+    flex: 1;
+
     border: none;
-    border-radius: 4px;
-    margin: 5px;
-    cursor: pointer;
+    border-radius: 6px;
+
+    padding: 12px;
+
+    font-weight: bold;
+
+    color: #fff;
 }
 
 .okay-button {
-    background-color: #609ad4;
-    color: white;
+    background: #609ad4;
 }
 
 .cancel-button {
-    background-color: #f08080;
-    color: white;
+    background: #f08080;
 }
+
+/* =========================================================================
+   AUTH
+   ========================================================================= */
+
 #auth-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.75); /* Làm tối khung cảnh game phía sau */
+    inset: 0;
+
+    background: rgba(0,0,0,0.72);
+
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(3px); /* Hiệu ứng làm mờ nhẹ phía sau (tùy chọn) */
+
+    backdrop-filter: blur(3px);
+
+    z-index: 5000;
 }
 
-/* ====== KHUNG ĐĂNG NHẬP / ĐĂNG KÝ ====== */
 .auth-box {
-    background-color: #1e1e1e; /* Nền xám đen hiện đại */
-    border-radius: 8px;
-    width: 320px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-    text-align: center;
-    color: #ffffff;
+    width: 88%;
+    max-width: 360px;
+
+    background: #1d1d1d;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* Phần Tiêu đề */
 .auth-header {
-    background-color: #609ad4; /* Màu xanh nước biển quen thuộc từ demo của bạn */
+    background: #609ad4;
+
     padding: 15px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    font-weight: bold;
+
+    text-align: center;
+
     font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: bold;
+
+    color: #fff;
 }
 
-/* Phần chứa các ô nhập liệu */
 .auth-content {
-    padding: 25px 20px;
+    padding: 18px;
+
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Khoảng cách đều giữa các ô input */
+
+    gap: 14px;
 }
 
-/* ====== Ô NHẬP LIỆU (INPUT) ====== */
 .auth-input {
     width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #444;
-    border-radius: 4px;
-    background-color: #2b2b2b;
+
+    padding: 13px;
+
+    border: 1px solid #3d3d3d;
+    border-radius: 8px;
+
+    background: #2a2a2a;
+
     color: #fff;
-    font-size: 14px;
-    box-sizing: border-box; /* Ngăn input tràn ra ngoài viền */
+
     outline: none;
-    transition: border-color 0.3s ease;
+
+    font-size: 14px;
 }
 
 .auth-input:focus {
-    border-color: #609ad4; /* Viền sáng lên màu xanh khi click vào */
+    border-color: #609ad4;
 }
 
-/* Giao diện cho ô Tên tài khoản bị khóa */
 .auth-input:disabled {
-    background-color: #151515;
+    background: #151515;
     color: #888;
-    cursor: not-allowed;
-    border-color: #333;
 }
 
-/* ====== NÚT BẤM (BUTTON) ====== */
 .auth-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #609ad4;
-    color: white;
     border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    margin-top: 10px;
-}
+    border-radius: 8px;
 
-.auth-button:hover {
-    background-color: #4a80b5; /* Đậm hơn một chút khi hover */
+    padding: 13px;
+
+    background: #609ad4;
+
+    color: #fff;
+
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .auth-button:active {
-    transform: scale(0.97); /* Hiệu ứng lún xuống khi click */
+    transform: scale(0.98);
 }
+
 /* =========================================================================
-   1. THIẾT LẬP CHUNG & KHUNG CHÍNH (DARK THEME CYBERPUNK)
+   INVENTORY ROOT
    ========================================================================= */
+
+#inventory-container {
+    display: none;
+}
+
 .inv-main {
-    display: flex;
-    background: linear-gradient(145deg, rgba(10, 17, 26, 0.98), rgba(6, 11, 18, 0.98));
-    border: 1px solid rgba(0, 229, 255, 0.15);
-    border-radius: 12px;
-    padding: 25px;
-    width: 950px;
-    height: 550px;
-    color: #ffffff;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 
-                0 0 30px rgba(0, 229, 255, 0.05);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Căn giữa màn hình game di động */
-    user-select: none;
-}
+    position: fixed;
 
-/* Bố cục 2 Panel */
-.left-panel {
-    width: 65%;
-    padding-right: 20px;
-    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(8, 15, 24, 0.96),
+            rgba(4, 9, 15, 0.98)
+        );
+
     display: flex;
     flex-direction: column;
-}
 
-.right-panel {
-    width: 35%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 25px;
-    background: rgba(255, 255, 255, 0.01);
-    border-radius: 8px;
-    position: relative;
+    overflow: hidden;
+
+    color: #fff;
+
+    z-index: 3000;
 }
 
 /* =========================================================================
-   2. KHU VỰC Ô TRANG BỊ (EQUIPMENT SECTIONS)
+   LEFT PANEL
    ========================================================================= */
-.equip-section {
-    margin-bottom: 20px;
-    background: rgba(0, 0, 0, 0.2);
+
+.left-panel {
+    width: 100%;
+    height: 58%;
+
     padding: 12px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.03);
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================================================
+   EQUIP
+   ========================================================================= */
+
+.equip-section {
+    margin-bottom: 12px;
 }
 
 .section-title {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #4b6b88;
     display: block;
+
     margin-bottom: 10px;
+
+    color: #6d8ba7;
+
+    font-size: 11px;
     font-weight: bold;
+
+    letter-spacing: 1px;
 }
 
 .equip-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 8px;
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+
+    gap: 6px;
 }
 
-/* Style các ô trang bị */
 .equip-slot {
-    width: 65px;
-    height: 65px;
-    background: radial-gradient(circle, rgba(20, 32, 48, 0.6) 0%, rgba(13, 21, 33, 0.8) 100%);
-    border: 1px dashed rgba(0, 229, 255, 0.3);
-    border-radius: 6px;
     position: relative;
-    cursor: pointer;
-    transition: all 0.25s ease;
+
+    aspect-ratio: 1/1;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(22, 34, 48, 0.9),
+            rgba(10, 18, 28, 0.9)
+        );
+
+    border: 1px dashed rgba(0,229,255,0.3);
 }
 
-.equip-slot:hover {
-    border-style: solid;
-    border-color: #00e5ff;
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
-    background: rgba(0, 229, 255, 0.05);
-}
-
-/* Hiển thị chữ gợi ý (Nón, Áo, Quần...) khi ô trống */
 .equip-slot.empty::before {
     content: attr(data-slot);
+
     position: absolute;
-    width: 100%;
+
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 10px;
-    color: #4b6b88;
-    font-weight: 500;
+
+    font-size: 9px;
+
+    color: #5d7388;
+
+    padding: 4px;
 }
 
 /* =========================================================================
-   3. TIÊU ĐỀ & LƯỚI Ô ĐỒ (INVENTORY GRID)
+   INVENTORY HEADER
    ========================================================================= */
+
 .inv-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
-    padding: 0 2px;
+
+    margin-bottom: 10px;
 }
 
 .inv-header .title {
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    background: linear-gradient(45deg, #ffffff, #00e5ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.inv-header .slot-count {
-    color: #00e5ff;
-    font-size: 12px;
+    font-size: 17px;
     font-weight: bold;
-    background: rgba(0, 229, 255, 0.1);
+
+    color: #fff;
+}
+
+.slot-count {
     padding: 4px 10px;
-    border-radius: 20px;
-    border: 1px solid rgba(0, 229, 255, 0.2);
+
+    border-radius: 999px;
+
+    background: rgba(0,229,255,0.1);
+
+    color: #00e5ff;
+
+    font-size: 11px;
+    font-weight: bold;
 }
 
-/* Lưới chứa 56 ô đồ có tính năng lướt lên lướt xuống mượt mà */
+/* =========================================================================
+   INVENTORY GRID
+   ========================================================================= */
+
 .inv-grid {
+    flex: 1;
+
     display: grid;
-    grid-template-columns: repeat(7, 1fr); /* 7 cột chuẩn như hình mẫu */
+
+    grid-template-columns: repeat(4, 1fr);
+
     gap: 8px;
-    height: 310px;
+
     overflow-y: auto;
-    padding-right: 6px;
+
+    padding-right: 3px;
 }
 
-/* Từng ô vật phẩm hành trang */
 .inv-slot {
-    background: rgba(17, 28, 42, 0.7);
-    border: 1px solid rgba(32, 51, 74, 0.8);
-    border-radius: 6px;
-    aspect-ratio: 1/1;
     position: relative;
-    cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    aspect-ratio: 1/1;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 29, 43, 0.95),
+            rgba(10, 18, 28, 0.95)
+        );
+
+    border: 1px solid rgba(41, 62, 88, 0.8);
+
+    overflow: hidden;
 }
 
-.inv-slot:hover {
-    border-color: #00e5ff;
-    background: rgba(0, 229, 255, 0.08);
-    transform: scale(1.03);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+.inv-slot:active {
+    transform: scale(0.96);
 }
 
-/* Số lượng vật phẩm góc trên (Ví dụ: x20) */
 .item-qty {
     position: absolute;
+
     top: 5px;
     right: 6px;
+
+    font-size: 10px;
+    font-weight: bold;
+
     color: #00e5ff;
-    font-size: 11px;
-    font-weight: 700;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+
+    z-index: 5;
+}
+
+.inv-slot img,
+.equip-slot img {
+    width: 75%;
+    height: 75%;
+
+    object-fit: contain;
+
+    margin: 12.5%;
 }
 
 /* =========================================================================
-   4. TÙY CHỈNH THANH CUỘN (SCROLLBAR) SIÊU MẢNH
+   ACTIVE SLOT
    ========================================================================= */
-.inv-grid::-webkit-scrollbar {
-    width: 4px;
-}
-.inv-grid::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.01);
-    border-radius: 10px;
-}
-.inv-grid::-webkit-scrollbar-thumb {
-    background: rgba(0, 229, 255, 0.4);
-    border-radius: 10px;
-}
-.inv-grid::-webkit-scrollbar-thumb:hover {
-    background: #00e5ff;
+
+.active-slot {
+    border-color: #00e5ff !important;
+
+    box-shadow:
+        0 0 12px rgba(0,229,255,0.4),
+        inset 0 0 10px rgba(0,229,255,0.15);
 }
 
 /* =========================================================================
-   5. PANEL THÔNG TIN CHI TIẾT BÊN PHẢI (DETAILS PANEL)
+   RIGHT PANEL
    ========================================================================= */
-/* Trạng thái trống chưa chọn đồ */
+
+.right-panel {
+    width: 100%;
+    height: 42%;
+
+    background: rgba(255,255,255,0.03);
+
+    border-top:
+        1px solid rgba(255,255,255,0.05);
+
+    padding: 14px;
+
+    overflow: hidden;
+}
+
 .detail-placeholder {
-    display: flex;
+    width: 100%;
     height: 100%;
-    align-items: center;
+
+    display: flex;
     justify-content: center;
-    color: #4b6b88;
-    font-size: 13px;
+    align-items: center;
+
     text-align: center;
-    font-style: italic;
+
+    color: #61788e;
+
+    font-size: 13px;
 }
 
 .detail-content {
     width: 100%;
+    height: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
 }
 
-/* Vòng tròn xem trước icon vật phẩm lớn */
 .item-preview {
-    width: 140px;
-    height: 140px;
-    background: radial-gradient(circle, rgba(0, 229, 255, 0.05) 0%, rgba(0, 0, 0, 0.3) 70%);
+    width: 90px;
+    height: 90px;
+
     border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,229,255,0.08),
+            rgba(0,0,0,0.2)
+        );
+
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    border: 1px solid rgba(0, 229, 255, 0.05);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+.item-preview img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
 }
 
 #detail-name {
-    font-size: 20px;
-    font-weight: 800;
-    margin: 15px 0 5px 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 17px;
+    font-weight: bold;
+
+    margin-bottom: 6px;
+
     text-align: center;
 }
 
-/* Nhãn độ hiếm (Rarity Badges) */
 .rarity {
-    font-size: 10px;
-    font-weight: 800;
-    padding: 3px 12px;
-    border-radius: 4px;
-    letter-spacing: 1.5px;
-    margin-bottom: 15px;
-}
-.rarity.common { background: rgba(144, 164, 174, 0.15); color: #b0bec5; border: 1px solid rgba(144, 164, 174, 0.3); }
-.rarity.rare { background: rgba(0, 229, 255, 0.15); color: #00e5ff; border: 1px solid rgba(0, 229, 255, 0.3); }
-.rarity.legendary { background: rgba(255, 152, 0, 0.15); color: #ff9800; border: 1px solid rgba(255, 152, 0, 0.3); text-shadow: 0 0 5px rgba(255,152,0,0.5); }
+    padding: 4px 10px;
 
-/* Khung mô tả vật phẩm */
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.rarity.common {
+    background: rgba(160,160,160,0.15);
+    color: #cfcfcf;
+}
+
+.rarity.rare {
+    background: rgba(0,229,255,0.15);
+    color: #00e5ff;
+}
+
+.rarity.legendary {
+    background: rgba(255,152,0,0.18);
+    color: #ff9800;
+}
+
 .item-desc {
-    font-size: 13px;
-    color: #a0aec0;
+    font-size: 12px;
+
     text-align: center;
-    margin-bottom: auto; /* Tự động đẩy bộ nút hành động xuống đáy */
+
+    color: #9eb1c4;
+
     line-height: 1.5;
-    padding: 0 10px;
-    height: 70px;
+
+    margin-bottom: auto;
+
     overflow-y: auto;
 }
 
 /* =========================================================================
-   6. HỆ THỐNG CÁC NÚT HÀNH ĐỘNG (ACTION BUTTONS)
+   BUTTONS
    ========================================================================= */
+
 .action-buttons {
     width: 100%;
-    margin-bottom: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-top: 12px;
 }
 
 .action-buttons button {
     width: 100%;
+
+    border: none;
+    border-radius: 8px;
+
     padding: 12px;
-    margin-top: 8px;
-    border: 1px solid transparent;
-    border-radius: 6px;
-    font-weight: 700;
+
     font-size: 13px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-weight: bold;
+
+    color: #fff;
 }
 
-/* Nút Sử dụng chính (Cyan Neon) */
 .btn-use {
-    background: #00e5ff;
-    color: #060b12;
-    box-shadow: 0 4px 15px rgba(0, 229, 255, 0.2);
-}
-.btn-use:hover {
-    background: #00b8d4;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(0, 229, 255, 0.3);
+    background: #00bcd4;
 }
 
-/* Nút Giao dịch (Dark Slate) */
 .btn-trade {
-    background: #172433;
-    color: #ffffff;
-    border: 1px solid #23364d;
-}
-.btn-trade:hover {
-    background: #20334a;
-    color: #00e5ff;
-    border-color: #00e5ff;
+    background: #243648;
 }
 
-/* Nút Xóa / Vứt bỏ (Màu đỏ cảnh báo) */
 .btn-delete {
-    background: rgba(211, 47, 47, 0.1);
-    color: #ef5350;
-    border: 1px solid rgba(211, 47, 47, 0.3);
-}
-.btn-delete:hover {
-    background: #d32f2f;
-    color: #ffffff;
-    border-color: #d32f2f;
-    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+    background: #d84343;
 }
 
 /* =========================================================================
-   7. TRẠNG THÁI ACTIVE ĐỒNG BỘ VỚI LOGIC JS (CLICK ĐỔI MÀU VIỀN)
+   SCROLLBAR
    ========================================================================= */
-.active-slot {
-    border-color: #00e5ff !important;
-    background: rgba(0, 229, 255, 0.15) !important;
-    box-shadow: 0 0 12px rgba(0, 229, 255, 0.4) !important;
-    border-style: solid !important; /* Áp dụng cho cả ô Trang bị nét đứt */
+
+::-webkit-scrollbar {
+    width: 3px;
 }
 
-/* Tiện ích ẩn phần tử */
-.hidden {
-    display: none !important;
+::-webkit-scrollbar-thumb {
+    background: rgba(0,229,255,0.4);
+    border-radius: 999px;
 }
+
+/* =========================================================================
+   MOBILE SAFE AREA
+   ========================================================================= */
+
+@supports (padding: max(0px)) {
+
+    .inv-main {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+    }
