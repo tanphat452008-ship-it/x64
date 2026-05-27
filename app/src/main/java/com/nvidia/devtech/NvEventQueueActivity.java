@@ -1523,29 +1523,33 @@ public void surfaceChanged(SurfaceHolder holder, int format, int width, int heig
         finishAndRemoveTask();
         System.exit(0);
     }
-    public void setPauseState(boolean z2) {
+    // 1. Khai báo biến này ở đầu Class (bên ngoài hàm setPauseState)
+private boolean mWasCefVisibleBeforePause = false;
+
+// 2. Sửa lại hàm setPauseState
+public void setPauseState(boolean z2) {
     if (mAndroidUI == null) {
         mAndroidUI = (FrameLayout) findViewById(R.id.ui_layout);
     }
 
-    // 1. Lấy trạng thái CEF ngay lập tức tại luồng game để không bị mất dữ liệu
-    final boolean isCefShow = mJavaManager.isShow();
-
-    // 2. Đưa các hàm can thiệp WebView vào luồng UI để không bị crash
     runOnUiThread(() -> {
-        if (isCefShow) {
-            if (z2) {
+        if (z2) { 
+            if (mWasCefVisibleBeforePause) {
                 mJavaManager.hideBrowserView();
-            } else {
+            }
+            
+            mAndroidUI.setVisibility(View.GONE);
+            
+        } else { 
+    
+            if (mWasCefVisibleBeforePause) {
                 mJavaManager.showBrowserView();
             }
+            
+            mAndroidUI.setVisibility(View.VISIBLE);
         }
-        
-        // Ẩn/hiện khung UI layout của Android
-        mAndroidUI.setVisibility(z2 ? View.GONE : View.VISIBLE);
     });
 }
-
 
     public void updateHudInfo(int health, int armour, int weaponid, int ammo, int playerid, int money, int wanted) { runOnUiThread(() -> { mHudManager.UpdateHudInfo(health, armour, weaponid, ammo, playerid, money, wanted); }); }
     public void showHud() { runOnUiThread(() -> { mHudManager.ShowHud(); }); }
